@@ -1,9 +1,10 @@
-import { extendTheme } from "@chakra-ui/react";
+import { extendTheme, theme as base } from "@chakra-ui/react";
+import { StyleFunctionProps } from "@chakra-ui/theme-tools";
 
 export const theme = extendTheme({
   fonts: {
-    heading: "Lexend",
-    body: "Inter",
+    heading: `Lexend ${base.fonts.heading}`,
+    body: `Inter ${base.fonts.body}`,
   },
   fontSizes: {
     xs: "0.875rem",
@@ -56,6 +57,45 @@ export const theme = extendTheme({
       random10: "#6100FF",
       random11: "#5700E3",
       random12: "#30007D",
+    },
+  },
+  components: {
+    Button: {
+      baseStyle: {
+        borderRadius: "4px",
+        fontWeight: "600",
+        _disabled: {
+          bg: "greyScale.grey5",
+          color: "white",
+          opacity: 1,
+        },
+        _hover: {
+          _disabled: {
+            bg: "greyScale.grey5",
+            color: "white",
+          },
+        },
+      },
+      sizes: {
+        sm: {
+          fontSize: "xs",
+          py: "12px",
+          px: "20px",
+        },
+        lg: {
+          fontSize: "sm",
+          py: "12px",
+          px: "28px",
+        },
+      },
+      variants: {
+        outline: (props: StyleFunctionProps) => ({
+          border: "2px solid",
+          _disabled: {
+            borderColor: "greyScale.grey5",
+          },
+        }),
+      },
     },
   },
 });
