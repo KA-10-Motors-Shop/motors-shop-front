@@ -195,3 +195,17 @@ export const SuccessButton = ({ children, ...rest }: ButtonProps) => {
     </ChakraButton>
   );
 };
+
+export const DetailTagButton = ({ children, ...rest }: ButtonProps) => (
+  <ChakraButton
+    bg="brand.brand4"
+    color="brand.brand1"
+    p="4px 8px"
+    fontWeight="500"
+    fontSize="xs"
+    _hover={{ bg: "brand.brand4", _disabled: { bg: "greyScale.grey5" } }}
+    {...rest}
+  >
+    {children}
+  </ChakraButton>
+);
