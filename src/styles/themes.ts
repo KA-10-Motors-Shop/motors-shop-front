@@ -2,6 +2,9 @@ import { extendTheme, theme as base } from "@chakra-ui/react";
 import { StyleFunctionProps } from "@chakra-ui/theme-tools";
 
 export const theme = extendTheme({
+  shadows: {
+    outline: `0 0 0 2px #B0A6F0`,
+  },
   fonts: {
     heading: `Lexend ${base.fonts.heading}`,
     body: `Inter ${base.fonts.body}`,
@@ -63,6 +66,7 @@ export const theme = extendTheme({
     Button: {
       baseStyle: {
         borderRadius: "4px",
+        fontFamily: `Inter`,
         fontWeight: "600",
         _disabled: {
           bg: "greyScale.grey5",
@@ -89,12 +93,12 @@ export const theme = extendTheme({
         },
       },
       variants: {
-        outline: (props: StyleFunctionProps) => ({
+        outline: {
           border: "2px solid",
           _disabled: {
             borderColor: "greyScale.grey5",
           },
-        }),
+        },
       },
     },
   },
