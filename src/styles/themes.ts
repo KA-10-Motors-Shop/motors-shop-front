@@ -2,12 +2,20 @@ import { extendTheme, theme as base } from "@chakra-ui/react";
 import { StyleFunctionProps } from "@chakra-ui/theme-tools";
 
 export const theme = extendTheme({
+  styles: {
+    global: {
+      body: {
+        bg: "white",
+        color: "greyScale.grey1",
+      },
+    },
+  },
   shadows: {
     outline: `0 0 0 2px #B0A6F0`,
   },
   fonts: {
-    heading: `Lexend ${base.fonts.heading}`,
-    body: `Inter ${base.fonts.body}`,
+    heading: `Lexend`,
+    body: `Inter`,
   },
   fontSizes: {
     xs: "0.875rem",
@@ -97,6 +105,18 @@ export const theme = extendTheme({
           border: "2px solid",
           _disabled: {
             borderColor: "greyScale.grey5",
+          },
+        },
+      },
+    },
+    Menu: {
+      baseStyle: {
+        item: {
+          bg: "#FFFFFF",
+          color: "greyScale.grey2",
+          fontWeight: "600",
+          _hover: {
+            bg: "greyScale.grey9",
           },
         },
       },
