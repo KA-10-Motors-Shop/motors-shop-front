@@ -27,7 +27,7 @@ export const Navbar = ({ username }: NavbarProps) => {
   const breadcrumbs = [
     { name: "Carros", onClick: () => alert("Redirect to /carros") },
     { name: "Motos", onClick: () => alert("Redirect to /motos") },
-    { name: "Leilao", onClick: () => alert("Redirect to /leilao") },
+    { name: "Leilão", onClick: () => alert("Redirect to /leilao") },
   ];
 
   const popUpMenu = [

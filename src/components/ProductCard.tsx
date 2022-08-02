@@ -22,7 +22,7 @@ export const ProductCard = ({
   sellerName,
 }: ProductCardProps) => {
   return (
-    <Flex flexDir="column" gap="16px" w="312px" borderRadius="4px">
+    <Flex flexDir="column" gap="16px" w="312px" borderRadius="4px" scrollSnapAlign={"center"}>
       <Flex
         bg="greyScale.grey7"
         border="2px solid"
