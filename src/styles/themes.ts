@@ -1,5 +1,12 @@
-import { extendTheme, theme as base } from "@chakra-ui/react";
-import { StyleFunctionProps } from "@chakra-ui/theme-tools";
+import { extendTheme } from "@chakra-ui/react";
+import { theme as base } from "@chakra-ui/react";
+
+const carouselBreakpoints = {
+  "carouselBASE": "320px",
+  "carouselMobileControl": "960px",
+  "carouselDesktop1": "992px",
+  "carouselDesktop2": "1900px",
+};
 
 export const theme = extendTheme({
   styles: {
@@ -25,6 +32,10 @@ export const theme = extendTheme({
     xl: "1.75rem",
     "2xl": "2rem",
     "3xl": "2.25rem",
+  },
+  breakpoints: {
+    ...base.breakpoints,
+    ...carouselBreakpoints,
   },
   colors: {
     brand: {
