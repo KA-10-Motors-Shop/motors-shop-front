@@ -109,7 +109,6 @@ export const Outline1Button = ({ children, ...rest }: ButtonProps) => {
   return (
     <ChakraButton
       variant="outline"
-      bg="white"
       color="greyScale.grey0"
       borderColor="greyScale.grey0"
       {...rest}
@@ -123,8 +122,7 @@ export const Outline2Button = ({ children, ...rest }: ButtonProps) => {
   return (
     <ChakraButton
       variant="outline"
-      bg="white"
-      color="greyScale.grey4"
+      color="greyScale.grey0"
       borderColor="greyScale.grey4"
       {...rest}
     >
@@ -137,7 +135,6 @@ export const OutlineBrandButton = ({ children, ...rest }: ButtonProps) => {
   return (
     <ChakraButton
       variant="outline"
-      bg="white"
       color="brand.brand1"
       borderColor="brand.brand1"
       _hover={{ bg: "brand.brand4", _disabled: { bg: "greyScale.grey5" } }}
@@ -151,6 +148,7 @@ export const OutlineBrandButton = ({ children, ...rest }: ButtonProps) => {
 export const LinkButton = ({ children, ...rest }: ButtonProps) => {
   return (
     <ChakraButton
+      h="fit-content"
       variant="outline"
       border="transparent"
       bg="transparent"
