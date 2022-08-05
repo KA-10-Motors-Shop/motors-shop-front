@@ -14,7 +14,9 @@ export const Footer = () => (
     color="greyScale.grey10"
   >
     <Image src={Logo} alt="Motors Shop" h="26px" />
-    <Text>© 2022 - Todos os direitos reservados.</Text>
+    <Text fontSize={{ base: "14px", lg: "16px" }}>
+      © 2022 - Todos os direitos reservados.
+    </Text>
     <IconButton
       aria-label="Scroll up"
       bg="greyScale.grey1"

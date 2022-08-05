@@ -1,4 +1,4 @@
-import { Avatar, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { DetailTagButton } from "./Button";
 import { UserMiniCard } from "./UserMiniCard";
 
