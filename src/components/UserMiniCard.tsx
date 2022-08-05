@@ -2,14 +2,21 @@ import { Avatar, Flex, Text, FlexProps } from "@chakra-ui/react";
 
 interface UserMiniCardProps extends FlexProps {
   username: string;
+  color?: string;
 }
 
-export const UserMiniCard = ({ username, onClick }: UserMiniCardProps) => {
+export const UserMiniCard = ({
+  username,
+  color,
+  onClick,
+}: UserMiniCardProps) => {
   const profilePicColor = Math.floor((username.length % 12) + 1);
   const formattedName = username
     .split(" ")
     .filter((element, index, array) => {
-      if (index === 0 || array.length - 1 === index) return element;
+      if (index === 0 || array.length - 1 === index) {
+        return element;
+      }
     })
     .join(" ");
 
@@ -24,7 +31,6 @@ export const UserMiniCard = ({ username, onClick }: UserMiniCardProps) => {
       gap="8px"
       _hover={{
         cursor: "pointer",
-        bg: "greyScale.grey9",
       }}
       onClick={onClick}
     >
@@ -34,8 +40,9 @@ export const UserMiniCard = ({ username, onClick }: UserMiniCardProps) => {
         bg={`profile.random${profilePicColor}`}
         size="14px"
         name={formattedName}
+        color="white"
       />
-      <Text fontSize="xs" color="greyScale.grey2">
+      <Text fontSize="xs" color={color || "greyScale.grey2"}>
         {formattedName}
       </Text>
     </Flex>
