@@ -1,6 +1,6 @@
-import { Avatar, Flex, Heading, Image, Text } from "@chakra-ui/react";
+import { Flex, Heading, Image, Text } from "@chakra-ui/react";
 import { DetailTagButton } from "./Button";
-import { SellerMiniCard } from "./SellerMiniCard";
+import { UserMiniCard } from "./UserMiniCard";
 
 interface ProductCardProps {
   img: string;
@@ -21,7 +21,6 @@ export const ProductCard = ({
   price,
   sellerName,
 }: ProductCardProps) => {
-  console.log(`profile.random${Math.floor(sellerName.length % 12)}`);
   return (
     <Flex flexDir="column" gap="16px" w="312px" borderRadius="4px">
       <Flex
@@ -51,7 +50,10 @@ export const ProductCard = ({
       <Text fontSize="xs" noOfLines={2}>
         {description}
       </Text>
-      <SellerMiniCard sellerName="Samuel Rosa" />
+      <UserMiniCard
+        username={sellerName}
+        onClick={() => alert("Redirect to profile page")}
+      />
       <Flex alignItems="center">
         <DetailTagButton size="sm" mr="12px">
           {`${km} KM`}

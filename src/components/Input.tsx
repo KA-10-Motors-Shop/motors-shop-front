@@ -12,11 +12,11 @@ interface InputProps {
 }
 
 export const Input = ({ label, type, placeholder, ...rest }: InputProps) => {
-  const styling = {
+  const props = {
     fontSize: "sm",
     placeholder: placeholder,
-    bg: "white",
     color: "greyScale.grey3",
+    border: "2px solid",
     borderColor: "greyScale.grey8",
     borderRadius: "4px",
     px: "16px",
@@ -29,18 +29,17 @@ export const Input = ({ label, type, placeholder, ...rest }: InputProps) => {
       color: "greyScale.grey1",
       boxShadow: "none",
     },
-    ...rest,
   };
 
   return (
-    <FormControl>
+    <FormControl px="20px">
       <FormLabel fontSize="xs" fontWeight="500">
         {label}
       </FormLabel>
       {type === "input" ? (
-        <ChakraInput {...styling} />
+        <ChakraInput {...props} {...rest} />
       ) : (
-        <ChakraTextarea {...styling} />
+        <ChakraTextarea {...props} {...rest} />
       )}
     </FormControl>
   );
