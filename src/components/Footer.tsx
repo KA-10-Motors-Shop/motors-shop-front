@@ -5,7 +5,6 @@ import Logo from "../assets/Logo-footer.svg";
 export const Footer = () => (
   <Flex
     h={{ base: "310px", lg: "140px" }}
-    mt={{ base: "45px", lg: "73px" }}
     flexDir={{ base: "column", lg: "row" }}
     p={{ base: "45px 55px", lg: "0 59px" }}
     bg="greyScale.grey0"
