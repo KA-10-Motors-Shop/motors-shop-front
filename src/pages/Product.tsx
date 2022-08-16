@@ -36,3 +36,4 @@ export const Product: React.FC<ProductPageProps> = ({ carInfo, comments }) => {
     </>
   );
 };
+
