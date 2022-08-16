@@ -6,7 +6,7 @@ import {
 } from "@chakra-ui/react";
 
 interface InputProps {
-  type: "input" | "textarea";
+  type: "input" | "textarea" | "password";
   label: string;
   placeholder: string;
 }
@@ -17,6 +17,7 @@ export const Input = ({ label, type, placeholder, ...rest }: InputProps) => {
     placeholder: placeholder,
     color: "greyScale.grey3",
     border: "2px solid",
+    type: type,
     borderColor: "greyScale.grey8",
     borderRadius: "4px",
     px: "16px",
@@ -32,14 +33,14 @@ export const Input = ({ label, type, placeholder, ...rest }: InputProps) => {
   };
 
   return (
-    <FormControl px="20px">
+    <FormControl>
       <FormLabel fontSize="xs" fontWeight="500">
         {label}
       </FormLabel>
-      {type === "input" ? (
-        <ChakraInput {...props} {...rest} />
-      ) : (
+      {type === "textarea" ? (
         <ChakraTextarea {...props} {...rest} />
+      ) : (
+        <ChakraInput {...props} {...rest} />
       )}
     </FormControl>
   );

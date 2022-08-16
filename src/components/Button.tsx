@@ -5,7 +5,7 @@ import {
 
 interface ButtonProps extends ChakraButtonProps {
   children: string;
-  size: "lg" | "sm";
+  size?: "lg" | "sm";
 }
 
 export const DefaultButton = ({ children, ...rest }: ButtonProps) => {
