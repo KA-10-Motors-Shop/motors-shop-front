@@ -22,7 +22,6 @@ export const UserMiniCard = ({
 
   return (
     <Flex
-      as="button"
       h="32px"
       w="fit-content"
       pr="4px"
@@ -35,6 +34,7 @@ export const UserMiniCard = ({
       onClick={onClick}
     >
       <Avatar
+        alignItems="center"
         w="32px"
         h="32px"
         bg={`profile.random${profilePicColor}`}
