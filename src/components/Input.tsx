@@ -1,7 +1,7 @@
 import {
-  Input as ChakraInput,
   FormLabel,
   FormControl,
+  Input as ChakraInput,
   Textarea as ChakraTextarea,
   FormErrorMessage,
 } from "@chakra-ui/react";
@@ -57,3 +57,21 @@ export const Input = ({
     </FormControl>
   );
 };
+
+export const Input = ({ label, type, ...rest }: InputProps) => (
+  <FormControl px="20px">
+    <FormLabel fontSize="xs" fontWeight="500">
+      {label}
+    </FormLabel>
+    <ChakraInput {...props} {...rest} />
+  </FormControl>
+);
+
+export const Textarea = ({ label, ...rest }: TextareaProps) => (
+  <FormControl>
+    <FormLabel fontSize="xs" fontWeight="500">
+      {label}
+    </FormLabel>
+    <ChakraTextarea {...props} {...rest} />
+  </FormControl>
+);
