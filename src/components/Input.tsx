@@ -3,15 +3,25 @@ import {
   FormLabel,
   FormControl,
   Textarea as ChakraTextarea,
+  FormErrorMessage,
 } from "@chakra-ui/react";
 
 interface InputProps {
-  type: "input" | "textarea" | "password";
+  type: "input" | "textarea" | "password" | "email";
   label: string;
   placeholder: string;
+  errorMsg?: any;
+  register?: any;
 }
 
-export const Input = ({ label, type, placeholder, ...rest }: InputProps) => {
+export const Input = ({
+  label,
+  type,
+  placeholder,
+  errorMsg,
+  register,
+  ...rest
+}: InputProps) => {
   const props = {
     fontSize: "sm",
     placeholder: placeholder,
@@ -21,6 +31,7 @@ export const Input = ({ label, type, placeholder, ...rest }: InputProps) => {
     borderColor: "greyScale.grey8",
     borderRadius: "4px",
     px: "16px",
+    marginBottom: "10px",
     _hover: {
       bg: "greyScale.grey8",
     },
@@ -33,15 +44,16 @@ export const Input = ({ label, type, placeholder, ...rest }: InputProps) => {
   };
 
   return (
-    <FormControl>
+    <FormControl isInvalid={errorMsg}>
       <FormLabel fontSize="xs" fontWeight="500">
         {label}
       </FormLabel>
       {type === "textarea" ? (
-        <ChakraTextarea {...props} {...rest} />
+        <ChakraTextarea {...(register && register)} {...props} {...rest} />
       ) : (
-        <ChakraInput {...props} {...rest} />
+        <ChakraInput {...(register && register)} {...props} {...rest} />
       )}
+      <FormErrorMessage>{errorMsg && errorMsg.message}</FormErrorMessage>
     </FormControl>
   );
 };
