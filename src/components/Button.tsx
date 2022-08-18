@@ -5,7 +5,7 @@ import {
 
 interface ButtonProps extends ChakraButtonProps {
   children: string;
-  size: "lg" | "sm";
+  size?: "lg" | "sm";
 }
 
 export const DefaultButton = ({ children, ...rest }: ButtonProps) => {
@@ -90,12 +90,12 @@ export const OutlineLightButton = ({ children, ...rest }: ButtonProps) => {
     <ChakraButton
       variant="outline"
       bg="transparent"
-      color="greyScale.grey10"
-      borderColor="greyScale.grey10"
+      color="greyScale.grey0"
+      borderColor="greyScale.grey4"
       _hover={{
         bg: "brand.brand4",
         borderColor: "brand.brand4",
-        color: "white",
+        color: "black",
         _disabled: { bg: "greyScale.grey5", borderColor: "greyScale.grey5" },
       }}
       {...rest}
