@@ -1,6 +1,6 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { BrandButton } from "./Button";
-import { Textarea } from "./Input";
+import { Input } from "./Input";
 import { UserMiniCard } from "./UserMiniCard";
 
 export interface CommentSectionProps {
@@ -69,7 +69,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({ comments }) => {
         w={{ base: "100%", lg: "calc(100% - 486px)", xl: "752px" }}
       >
         <UserMiniCard username="Context State" />
-        <Textarea my="24px" />
+        <Input type="textarea" label="" placeholder="" />
         <BrandButton size="lg" w="108px" h="38px">
           Comentar
         </BrandButton>
