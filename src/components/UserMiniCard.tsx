@@ -3,12 +3,18 @@ import { Avatar, Flex, Text, FlexProps } from "@chakra-ui/react";
 interface UserMiniCardProps extends FlexProps {
   username: string;
   color?: string;
+  size?: any;
+  fontdSize?: string;
+  text?: boolean;
 }
 
 export const UserMiniCard = ({
   username,
   color,
   onClick,
+  size = "32px",
+  fontSize = "14px",
+  text = true,
 }: UserMiniCardProps) => {
   const profilePicColor = Math.floor((username.length % 12) + 1);
   const formattedName = username
@@ -22,7 +28,7 @@ export const UserMiniCard = ({
 
   return (
     <Flex
-      h="32px"
+      h={size}
       w="fit-content"
       pr="4px"
       borderRadius="4px"
@@ -35,16 +41,19 @@ export const UserMiniCard = ({
     >
       <Avatar
         alignItems="center"
-        w="32px"
-        h="32px"
+        w={size}
+        h={size}
         bg={`profile.random${profilePicColor}`}
         size="14px"
         name={formattedName}
         color="white"
+        fontSize={fontSize}
       />
-      <Text fontSize="xs" color={color || "greyScale.grey2"}>
-        {formattedName}
-      </Text>
+      {text && (
+        <Text fontSize="xs" color={color || "greyScale.grey2"}>
+          {formattedName}
+        </Text>
+      )}
     </Flex>
   );
 };
