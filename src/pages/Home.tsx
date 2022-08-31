@@ -1,11 +1,13 @@
 import { Box, Flex, Heading, Text } from "@chakra-ui/react";
 import { BrandButton, Outline1Button, Outline2Button } from "../components/Button"
+import { CarouselAuction } from "../components/CarouselAuction";
+import { CarouselItem, CarouselItemProps } from "../components/CarouselAuction/CarouselItem";
+import { CarouselSale } from "../components/CarouselSales";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import { ProductCard } from "../components/ProductCard";
-import { databaseCar, databaseMoto } from "../database";
+import { databaseCar, databaseMoto, databaseAuction } from "../database";
 export const Home = () => {   
-     
     return (        
         <>
             <Navbar username="Ana" />
@@ -56,15 +58,19 @@ export const Home = () => {
                     />
                 </Flex>
             </Flex>
-            <Box
-                ml="60px"
-                p={{base: "540px", lg: "496px"}}
-                bg="profile.random9"
-                
-            >
-                Leilão
-            </Box>
-            <Box ml="60px">
+            <CarouselAuction carouselList={databaseAuction} />    
+            <Heading
+                    as="h6"
+                    fontSize="lg"
+                    mt={{ base: "67px", lg: "200px" }}
+                    //mb="62px"
+                    ml="60px"
+                    color="greyScale.grey0"
+                >
+                   Carros
+                </Heading>  
+            <CarouselSale carouselList={databaseCar} />
+            {/*<Box ml="60px">
                 <Heading
                     as="h6"
                     fontSize="lg"
@@ -77,8 +83,8 @@ export const Home = () => {
                 <Flex overflowX={"auto"} scrollSnapType={"x mandatory"} scrollBehavior={"smooth"}>
                     {databaseCar.map(({ id, img, title, description, km, year, price, sellerName }) => <ProductCard key={id} img={img} title={title} description={description} km={km} year={year} price={price} sellerName={sellerName} />)}
                 </Flex>
-            </Box>
-            <Box>
+            </Box>*/}
+            {/*<Box>
                 <Heading
                         as="h6"
                         fontSize="lg"
@@ -89,9 +95,9 @@ export const Home = () => {
                     Motos
                 </Heading> 
                 <Flex overflowX={"auto"} scrollSnapType={"x mandatory"} scrollBehavior={"smooth"}>    
-                    {databaseMoto.map(({ id, img, title, description, km, year, price, sellerName }) => <ProductCard key={id} img={img} title={title} description={description} km={km} year={year} price={price} sellerName={sellerName} />)}
+                    {databaseMoto.map(({ id, img, title, description, km, year, price, username }) => <ProductCard key={id} img={img} title={title} description={description} km={km} year={year} price={price} username={username} />)}
                 </Flex>
-            </Box>
+            </Box>*/}
            <Footer  /> 
         </>
     )

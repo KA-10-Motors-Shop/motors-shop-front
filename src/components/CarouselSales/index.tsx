@@ -16,7 +16,7 @@ interface CarouselBreakpoints {
   };
 }
 
-export const Carousel: React.FC<CarouselProps> = ({ carouselList }) => {
+export const CarouselSale: React.FC<CarouselProps> = ({ carouselList }) => {
   // This is a hacky solution to avoid overlapping/big spaces inside the swiper
   // The library itself offers limited ways to deal with responsiveness when
   // presenting with multiple slides
@@ -27,7 +27,7 @@ export const Carousel: React.FC<CarouselProps> = ({ carouselList }) => {
   // via theme extension
 
   const carouselBreakpoints: CarouselBreakpoints = {
-    "220": { slidesPerView: 1 },
+    "220": { slidesPerView: 2 },
   };
 
   for (let i = 0; i < 9; i++) {

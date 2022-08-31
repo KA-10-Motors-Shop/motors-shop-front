@@ -1,5 +1,6 @@
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
+import { useState } from "react";
 import { DetailTagButton } from "../Button";
 import { UserMiniCard } from "../UserMiniCard";
 
@@ -26,13 +27,14 @@ export const CarouselItem: React.FC<CarouselItemProps> = ({
     <Flex
       flexDir="column"
       flexShrink="0"
-      w={{ base: "100%", sm: "328px", lg: "737px" }}
-      h={{ base: "496px", lg: "387px" }}
+      w={{ base: "100%", sm: "328px", lg: "735px" }}
+      h={{ base: "496px", lg: "388px" }}
       backgroundImage={img}
       backgroundPosition={{ base: "0 60px", lg: "35% 80%" }}
       backgroundRepeat="no-repeat"
       backgroundSize={{ base: "contain", lg: "80%" }}
-      m="0"
+      ml="60px"
+      mt="60px"
     >
       <Flex
         h={{ base: "435px", lg: "328px" }}
@@ -45,16 +47,7 @@ export const CarouselItem: React.FC<CarouselItemProps> = ({
           bg: "linear-gradient(180deg, rgba(0, 0, 0, 0.71) 0%, #000000 100%)",
           transition: "all 0.2s ease-in",
         }}
-      >
-        <Box
-          w="123px"
-          h="36px"
-          bg="white"
-          textAlign="center"
-          borderRadius="32px"
-        >
-          TIMER
-        </Box>
+      >        
         <Flex
           flexDir="column"
           justifyContent="space-between"
@@ -101,20 +94,6 @@ export const CarouselItem: React.FC<CarouselItemProps> = ({
           </Flex>
         </Flex>
       </Flex>
-      <Button
-        size="lg"
-        h="61px"
-        borderRadius="0 0 4px 4px"
-        alignItems="center"
-        justifyContent="space-between"
-        p="31px"
-        pl="22px"
-        color="white"
-        bg="brand.brand1"
-        _hover={{ bg: "brand.brand2" }}
-      >
-        Acessar página do leilão <ArrowForwardIcon fontSize="lg" />
-      </Button>
     </Flex>
   );
 };
