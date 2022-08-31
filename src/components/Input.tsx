@@ -12,6 +12,7 @@ interface InputProps {
   placeholder: string;
   errorMsg?: any;
   register?: any;
+  width?: string;
 }
 
 export const Input = ({

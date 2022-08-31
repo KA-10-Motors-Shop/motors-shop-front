@@ -1,6 +1,8 @@
 import {
+  Box,
   Button as ChakraButton,
   ButtonProps as ChakraButtonProps,
+  useRadio,
 } from "@chakra-ui/react";
 
 interface ButtonProps extends ChakraButtonProps {
@@ -56,6 +58,44 @@ export const BrandButton = ({ children, ...rest }: ButtonProps) => {
     >
       {children}
     </ChakraButton>
+  );
+};
+
+export const BrandButtonDisable = (props: any, ...rest: any) => {
+  const { getInputProps, getCheckboxProps } = useRadio(props);
+
+  const input = getInputProps();
+  const checkbox = getCheckboxProps();
+
+  return (
+    <Box width={props.width}>
+      <input {...input} />
+      <ChakraButton
+        {...checkbox}
+        variant="outline"
+        bg="transparent"
+        color="greyScale.grey0"
+        borderColor="greyScale.grey4"
+        _hover={{
+          bg: "brand.brand2",
+          color: "white",
+          borderColor: "brand.brand2",
+
+          _disabled: {
+            bg: "brand.brand3",
+            cursor: "not-allowed",
+          },
+        }}
+        _focus={{
+          bg: "brand.brand2",
+          color: "white",
+          borderColor: "brand.brand2",
+        }}
+        {...props}
+      >
+        {props.children}
+      </ChakraButton>
+    </Box>
   );
 };
 
