@@ -5,6 +5,7 @@ import { Register } from "../pages/Register";
 // import { Product } from "../pages/Product";
 import { ProductViewUser } from "../pages/ProductViewUser";
 import { ProductViewAdmin } from "../pages/ProductViewAdmin";
+import { Product } from "../pages/Product";
 
 export const Routes = () => {
   return (
@@ -19,7 +20,7 @@ export const Routes = () => {
         <Login />
       </Route>
       <Route exact path="/product/:id">
-        {/* <Product /> */}
+        <Product />
       </Route>
       <Route exact path="/productViewUser">
         <ProductViewUser />
