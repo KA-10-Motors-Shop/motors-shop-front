@@ -2,32 +2,31 @@ import { Switch, Route } from "react-router-dom";
 import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
-// import { Product } from "../pages/Product";
+import { Product } from "../pages/Product";
 import { ProductViewUser } from "../pages/ProductViewUser";
 import { ProductViewAdmin } from "../pages/ProductViewAdmin";
-import { Product } from "../pages/Product";
 
 export const Routes = () => {
-  return (
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-      <Route exact path="/register">
-        <Register />
-      </Route>
-      <Route exact path="/login">
-        <Login />
-      </Route>
-      <Route exact path="/product/:id">
-        <Product />
-      </Route>
-      <Route exact path="/productViewUser">
-        <ProductViewUser />
-      </Route>
-      <Route exact path="/productViewAdmin/:id">
-        <ProductViewAdmin />
-      </Route>
-    </Switch>
-  );
+	return (
+		<Switch>
+			<Route exact path="/">
+				<Home />
+			</Route>
+			<Route exact path="/register">
+				<Register />
+			</Route>
+			<Route exact path="/login">
+				<Login />
+			</Route>
+			<Route exact path="/product/:id">
+				<Product />
+			</Route>
+			<Route exact path="/productViewUser">
+				<ProductViewUser />
+			</Route>
+			<Route exact path="/productViewAdmin/:id">
+				<ProductViewAdmin />
+			</Route>
+		</Switch>
+	);
 };

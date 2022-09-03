@@ -1,5 +1,7 @@
 export const ProductViewAdmin = () => {
-    return (
-        <h1>ProductViewAdmin</h1>
-    )
-}
+	return (
+		<>
+			<h1>ProductViewAdmin</h1>
+		</>
+	);
+};
