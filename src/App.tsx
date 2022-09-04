@@ -1,7 +1,7 @@
+import { Routes } from "./routes";
+import GlobalStyle from "./styles/global";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import GlobalStyle from "./styles/global";
-import { Routes } from "./routes";
 
 export const App = () => {
 	return (

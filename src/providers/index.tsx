@@ -1,11 +1,10 @@
-import { theme } from "../styles/themes"
-import { ReactNode } from "react"
-import { TokenProvider } from "./token"
+import { ReactNode } from "react";
+import { TokenProvider } from "./token";
 
 interface AppProviderProps {
-	children: ReactNode
+	children: ReactNode;
 }
 
 export const AppProvider = ({ children }: AppProviderProps) => (
 	<TokenProvider>{children}</TokenProvider>
-)
+);
