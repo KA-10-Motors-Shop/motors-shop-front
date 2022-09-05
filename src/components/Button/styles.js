@@ -7,7 +7,6 @@ export const DefaultButtonStyled = styled.button`
 	border-radius: 4px;
 	width: 9.125em;
 	height: 3em;
-	padding: 0.75em 1.75em;
 	font-size: 1rem;
 	font-weight: 600;
 	font-style: normal;

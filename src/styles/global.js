@@ -35,22 +35,27 @@ export default createGlobalStyle`
       --success3: #DDF3E4;
     }
     
-    body, input, button {
+    body, input, button, p, span {
         font-family: "Inter";
         font-size: 1rem;
+        font-weight: 400;
     }
     
     button {
         cursor: pointer;
+        width: 100vw;
+        height: 100vh;
     }
     
     a, li {
         text-decoration: none;
+        list-style: none;
     }
     
     h1, h2, h3, h4, h5, h6 {
         font-family: "Lexend";
         font-size: 1em;
+        font-weight: 600;
     }   
     
 `;
