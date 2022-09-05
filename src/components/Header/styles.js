@@ -2,12 +2,11 @@ import styled from "styled-components";
 
 export const HeaderStyled = styled.header`
 	section.header-toggle {
-		min-width: 23.44rem;
-		display: flex;
-		height: 5rem;
 		position: fixed;
+		width: 100vw;
+		display: flex;
+		height: 12.88vh;
 		z-index: 100;
-
 		align-items: center;
 		justify-content: space-between;
 		border-bottom: 2px solid var(--grey6);
@@ -16,7 +15,7 @@ export const HeaderStyled = styled.header`
 		padding-right: 1rem;
 
 		img {
-			min-width: 9.56rem;
+			width: 9.56rem;
 			height: 1.65rem;
 		}
 	}
@@ -39,10 +38,13 @@ export const HeaderStyled = styled.header`
 		display: flex;
 		flex-direction: column;
 		justify-content: flex-start;
+		background-color: var(--whiteFixed);
+		height: 100vh;
+		width: 100vw;
 
 		li {
-			width: 23.375rem;
-			height: 4.48rem;
+			width: 100vw;
+			height: 100vh;
 			display: flex;
 			flex-direction: column;
 			padding-top: 2rem;
@@ -65,16 +67,16 @@ export const HeaderStyled = styled.header`
 	}
 
 	div.header-div__line {
-		width: 23.375rem;
+		width: 100vw;
 		border-bottom: 1px solid var(--grey4);
 	}
 
 	ul.header-mobile__list--breadcrumbs {
-		height: 14.75rem;
+		height: 50vh;
 	}
 
 	ul.header-mobile__list--sign {
-		height: 11.5rem;
+		height: 38vh;
 
 		button {
 			width: 20.81rem;
