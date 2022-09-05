@@ -26,6 +26,7 @@ export default createGlobalStyle`
       --grey8: #F1F3F5;
       --grey9: #F8F9FA;
       --grey10: #FDFDFD;
+      --allBlack: #000000;
       --whiteFixed: #FFFFFF;
       --alert1: #CD2B31;
       --alert2: #FDD8D8;

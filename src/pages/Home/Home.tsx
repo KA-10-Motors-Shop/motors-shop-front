@@ -1,8 +1,9 @@
 import { AuctionCard } from "../../components/AuctionCard/AuctionCard";
 import { OutlineLightButton } from "../../components/Button/Button";
 import { Header } from "../../components/Header/Header";
-import { AuctionBox, Container } from "./styles";
-import { databaseAuction } from "../../database";
+import { AuctionBox, Container, SaleBox } from "./styles";
+import { databaseAuction, databaseCar, databaseMoto } from "../../database";
+import { SaleCard } from "../../components/SaleCard/SaleCard";
 
 export const Home = () => {
 	return (
@@ -51,6 +52,70 @@ export const Home = () => {
 					)}
 				</ul>
 			</AuctionBox>
+			<SaleBox>
+				<h5>Carros</h5>
+				<ul>
+					{databaseCar.map(
+						(
+							{
+								id,
+								img,
+								title,
+								description,
+								km,
+								year,
+								price,
+								username,
+							},
+							index,
+						) => (
+							<SaleCard
+								key={index}
+								id={id}
+								img={img}
+								title={title}
+								description={description}
+								km={km}
+								year={year}
+								price={price}
+								username={username}
+							/>
+						),
+					)}
+				</ul>
+			</SaleBox>
+			<SaleBox>
+				<h5>Motos</h5>
+				<ul>
+					{databaseMoto.map(
+						(
+							{
+								id,
+								img,
+								title,
+								description,
+								km,
+								year,
+								price,
+								username,
+							},
+							index,
+						) => (
+							<SaleCard
+								key={index}
+								id={id}
+								img={img}
+								title={title}
+								description={description}
+								km={km}
+								year={year}
+								price={price}
+								username={username}
+							/>
+						),
+					)}
+				</ul>
+			</SaleBox>
 		</>
 	);
 };
