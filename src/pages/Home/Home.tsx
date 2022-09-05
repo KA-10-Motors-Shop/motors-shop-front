@@ -4,6 +4,7 @@ import { Header } from "../../components/Header/Header";
 import { AuctionBox, Container, SaleBox } from "./styles";
 import { databaseAuction, databaseCar, databaseMoto } from "../../database";
 import { SaleCard } from "../../components/SaleCard/SaleCard";
+import { Footer } from "../../components/Footer/Footer";
 
 export const Home = () => {
 	return (
@@ -116,6 +117,7 @@ export const Home = () => {
 					)}
 				</ul>
 			</SaleBox>
+			<Footer />
 		</>
 	);
 };
