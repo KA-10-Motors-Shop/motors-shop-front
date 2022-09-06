@@ -82,7 +82,7 @@ export const AuctionBox = styled.section`
 
 export const SaleBox = styled.section`
 	height: 32.8125rem;
-	width: 23.4375rem;
+	width: 100vw;
 
 	h5 {
 		margin-top: 4.1875rem;

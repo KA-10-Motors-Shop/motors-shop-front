@@ -74,7 +74,6 @@ export const Container = styled.li`
 
 	section.card-data__vehicle {
 		display: flex;
-		/*position: relative;*/
 		width: 19.3125rem;
 
 		p {
@@ -104,5 +103,9 @@ export const Container = styled.li`
 			justify-content: flex-end;
 			align-items: center;
 		}
+	}
+
+	@media (min-width: 750px) {
+		margin-right: 3rem;
 	}
 `;
