@@ -37,4 +37,12 @@ export const FooterStyled = styled.footer`
 			size: 1rem;
 		}
 	}
+
+	@media (min-width: 750px) {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding-left: 3.68rem;
+		padding-right: 3.68rem;
+	}
 `;
