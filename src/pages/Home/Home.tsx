@@ -16,9 +16,11 @@ export const Home = () => {
 						Velocidade e experiência em um lugar feito para você
 					</h3>
 					<p>Um ambiente feito para você explorar o seu melhor</p>
-					<OutlineLightButton>Leilão</OutlineLightButton>
-					<OutlineLightButton>Carros</OutlineLightButton>
-					<OutlineLightButton>Motos</OutlineLightButton>
+					<div>
+						<OutlineLightButton>Leilão</OutlineLightButton>
+						<OutlineLightButton>Carros</OutlineLightButton>
+						<OutlineLightButton>Motos</OutlineLightButton>
+					</div>
 				</section>
 			</Container>
 			<AuctionBox>

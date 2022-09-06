@@ -7,7 +7,7 @@ export const Container = styled.main`
 		padding-top: 8.3125rem;
 		background-color: var(--brand2);
 		align-items: center;
-		max-width: 60rem;
+		width: 100vw;
 		padding-bottom: 5.3125rem;
 
 		h3 {
@@ -16,6 +16,13 @@ export const Container = styled.main`
 			text-align: center;
 			margin-bottom: 3.25rem;
 			color: var(--grey10);
+			width: 23.5rem;
+			height: 7.5rem;
+
+			@media (min-width: 750px) {
+				width: 35rem;
+				margin-bottom: 0.5rem;
+			}
 		}
 
 		p {
@@ -25,10 +32,27 @@ export const Container = styled.main`
 			line-height: 1.75rem;
 		}
 
-		button {
-			width: 21.93rem;
-			height: 3rem;
-			margin-bottom: 1.25rem;
+		div {
+			display: flex;
+			flex-direction: column;
+
+			button {
+				width: 21.93rem;
+				height: 3rem;
+				margin-bottom: 1.25rem;
+				color: var(--grey10);
+				font-size: 1rem;
+				font-weight: 600;
+			}
+
+			@media (min-width: 750px) {
+				flex-direction: row;
+
+				button {
+					width: 7.34rem;
+					margin-right: 1.3125rem;
+				}
+			}
 		}
 	}
 `;
@@ -40,13 +64,15 @@ export const AuctionBox = styled.section`
 	h5 {
 		margin-top: 6rem;
 		margin-bottom: 5.92rem;
+		margin-left: 0.75rem;
+		font-size: 1.5rem;
 	}
 
 	ul {
 		display: flex;
 		overflow-x: auto;
 		scroll-behavior: smooth;
-		height: 34.5rem;
+		height: 100rem;
 
 		li:first-child {
 			margin-left: 0.75rem;
