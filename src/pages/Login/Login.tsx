@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useHistory } from "react-router";
-import { UseTokenProvider } from "../providers/token";
-import api from "../services/api";
+import { Input } from "../../components/Input/Input";
+import { UseTokenProvider } from "../../providers/token";
+import api from "../../services/api";
+import { Container } from "./styles";
 
 export const Login = () => {
 	const { setToken, token }: any = UseTokenProvider();
@@ -38,8 +40,8 @@ export const Login = () => {
 	});
 
 	return (
-		<>
-			<h1>Login</h1>
-		</>
+		<Container>
+			<Input label="Label" placeholder="Placeholder" />
+		</Container>
 	);
 };

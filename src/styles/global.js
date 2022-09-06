@@ -36,7 +36,7 @@ export default createGlobalStyle`
       --success3: #DDF3E4;
     }
     
-    body, input, button, p, span {
+    body, input, button, p, span, label, ::placeholder {
         font-family: "Inter";
         font-size: 1rem;
         font-weight: 400;
