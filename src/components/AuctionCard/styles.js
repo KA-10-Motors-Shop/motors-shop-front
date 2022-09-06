@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.li`
-	height: 31rem;
+	height: 30rem;
 	width: 20.5rem;
 	/*background-image: image();*/
 	background: linear-gradient(180deg, rgba(0, 0, 0, 0.29) 0%, #000000 100%);
@@ -36,7 +36,6 @@ export const Container = styled.li`
 			margin-bottom: 0;
 			width: 4.0625rem;
 			height: 1.25rem;
-			/*text-align: center;*/
 		}
 
 		svg {
@@ -57,11 +56,11 @@ export const Container = styled.li`
 		font-size: 1rem;
 		line-height: 1.75rem;
 		color: var(--grey5);
+		margin-right: 1.94rem;
 	}
 
 	section.card-data__user {
 		display: flex;
-		/*justify-content: space-evenly;*/
 		height: 2rem;
 		width: 9.3125rem;
 		align-items: center;
@@ -88,25 +87,30 @@ export const Container = styled.li`
 
 	section.card-data__vehicle {
 		display: flex;
-		margin-bottom: 1.25rem;
+		flex-direction: column;
 
-		p {
-			color: var(--brand1);
-			background-color: var(--brand4);
-			border-radius: 4px;
-			width: 3.125rem;
-			height: 2rem;
-			text-align: center;
-			margin-right: 0.75rem;
+		div {
+			display: flex;
+			flex-direction: row;
+			padding: 0;
+
+			p {
+				color: var(--brand1);
+				background-color: var(--brand4);
+				border-radius: 4px;
+				width: 3.125rem;
+				height: 2rem;
+				text-align: center;
+				margin-right: 0.75rem;
+			}
 		}
-	}
 
-	section.card-data__vehicle + h6 {
-		color: var(--whiteFixed);
-		font-size: 1rem;
-		margin-bottom: 2.0625rem;
-		font-weight: 500;
-		line-height: 1.25rem;
+		h6 {
+			color: var(--whiteFixed);
+			font-size: 1rem;
+			font-weight: 500;
+			line-height: 1.25rem;
+		}
 	}
 
 	button {
@@ -115,5 +119,40 @@ export const Container = styled.li`
 		padding-left: 0;
 		font-size: 1rem;
 		font-weight: 600;
+		border-radius: 0px 0px 4px 4px;
+	}
+
+	@media (min-width: 750px) {
+		height: 24.25rem;
+		width: 45.94rem;
+
+		section.card-data__timer {
+			margin-top: 1.5rem;
+			margin-bottom: 4.3125rem;
+			width: 7.68rem;
+			height: 2.25rem;
+			border-radius: 32px;
+		}
+
+		h6 {
+			margin-bottom: 1rem;
+		}
+
+		section.card-data__vehicle {
+			flex-direction: row;
+			margin-bottom: 0.8rem;
+
+			h6 {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 6.56rem;
+				height: 1.25rem;
+			}
+		}
+
+		button {
+			width: 45.94rem;
+		}
 	}
 `;

@@ -38,10 +38,12 @@ export const AuctionCard = ({
 					<span>{username}</span>
 				</section>
 				<section className="card-data__vehicle">
-					<p>{year}</p>
-					<p>{km} KM</p>
+					<div>
+						<p>{year}</p>
+						<p>{km} KM</p>
+					</div>
+					<h6>R$ {price}</h6>
 				</section>
-				<h6>R$ {price}</h6>
 			</div>
 			<BrandButton>Acessar página do leilão </BrandButton>
 		</Container>

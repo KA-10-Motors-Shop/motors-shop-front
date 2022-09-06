@@ -59,7 +59,7 @@ export const Container = styled.main`
 
 export const AuctionBox = styled.section`
 	height: 37.52rem;
-	width: 23.4375rem;
+	width: 100vw;
 
 	h5 {
 		margin-top: 6rem;
