@@ -1,5 +1,7 @@
 export const ProductViewUser = () => {
-    return (
-        <h1>ProductViewUser</h1>
-    )
-}
+	return (
+		<>
+			<h1>Product View User</h1>
+		</>
+	);
+};
