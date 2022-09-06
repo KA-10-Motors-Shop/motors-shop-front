@@ -1,7 +1,7 @@
 import { Container } from "./styles";
 import { BrandButton } from "../Button/Button";
 import { FiClock } from "react-icons/fi";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
 interface AuctionCardInterface {
 	id: number;
@@ -45,7 +45,9 @@ export const AuctionCard = ({
 					<h6>R$ {price}</h6>
 				</section>
 			</div>
-			<BrandButton>Acessar página do leilão </BrandButton>
+			<BrandButton>
+				Acessar página do leilão <HiOutlineArrowNarrowRight size={32} />
+			</BrandButton>
 		</Container>
 	);
 };

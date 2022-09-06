@@ -15,7 +15,7 @@ import {
 } from "./styles";
 
 interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-	children: string;
+	children: any;
 }
 
 export const DefaultButton = ({ children, ...rest }: IButtonProps) => {

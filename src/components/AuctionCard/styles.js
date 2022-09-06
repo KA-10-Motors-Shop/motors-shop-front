@@ -116,10 +116,15 @@ export const Container = styled.li`
 	button {
 		width: 20.5rem;
 		height: 3.8125rem;
-		padding-left: 0;
+		/*padding-left: 0;*/
 		font-size: 1rem;
 		font-weight: 600;
 		border-radius: 0px 0px 4px 4px;
+		display: flex;
+		justify-content: space-between;
+		padding-left: 1.375rem;
+		padding-right: 1.375rem;
+		align-items: center;
 	}
 
 	@media (min-width: 750px) {
