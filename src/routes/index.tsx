@@ -1,6 +1,6 @@
 import { Switch, Route } from "react-router-dom";
 import { Home } from "../pages/Home/Home";
-import { Login } from "../pages/Login";
+import { Login } from "../pages/Login/Login";
 import { Register } from "../pages/Register";
 import { Product } from "../pages/Product";
 import { ProductViewUser } from "../pages/ProductViewUser";
