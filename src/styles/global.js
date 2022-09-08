@@ -34,6 +34,18 @@ export default createGlobalStyle`
       --success1: #18794E;
       --success2: #CCEBD7;
       --success3: #DDF3E4;
+      --random1: #E34D8C;
+      --random2: #C04277;
+      --random3: #7D2A4D;
+      --random4: #7000FF;
+      --random5: #6200E3;
+      --random6: #36007D;
+      --random7: #349974;
+      --random8: #2A7D5F;
+      --random9: #153D2E;
+      --random10: #6100FF;
+      --random11: #5700E3;
+      --random12: #30007D;
     }
     
     body, input, button, p, span, label, ::placeholder {
