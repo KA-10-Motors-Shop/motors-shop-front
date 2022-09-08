@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { UseTokenProvider } from "../../providers/token";
 
 export const HeaderStyled = styled.header`
   section.header-toggle {
@@ -13,6 +14,7 @@ export const HeaderStyled = styled.header`
     background-color: var(--whiteFixed);
     padding-left: 1rem;
     padding-right: 1rem;
+    z-index: 1;
 
     img {
       width: 9.56rem;
@@ -87,8 +89,12 @@ export const HeaderStyled = styled.header`
   }
 `;
 
-export const NavLinks = styled.nav`
-  width: 600px;
+interface INav {
+  token?: string;
+}
+
+export const NavLinks = styled.nav<INav>`
+  width: ${({ token }) => (token ? "500px" : "600px")};
   display: flex;
   align-items: center;
 
@@ -107,7 +113,9 @@ export const DivLoginButton = styled.div`
   border-left: 2px solid var(--grey6);
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   padding-left: 10px;
   height: 80px;
+  width: 100%;
 `;

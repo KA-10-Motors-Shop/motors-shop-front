@@ -8,12 +8,19 @@ import {
 import { NavLinks, HeaderStyled, DivLoginButton } from "./styles";
 import { HiOutlineMenu } from "react-icons/hi";
 import { IoMdClose } from "react-icons/io";
+import { UseTokenProvider } from "../../providers/token";
+import Avatar from "../Avatar";
+import { useHistory } from "react-router";
+import CreateAdModal from "../CreateAdModal";
 
 export const Header = () => {
   const [isLogged, setIsLogged] = useState(false);
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [activeModal, setActiveModal] = useState(false);
   const handleLogin = () => setIsLogged(!isLogged);
+
+  const { token }: any = UseTokenProvider();
 
   const popUpMenu = [
     "Editar Perfil",
@@ -26,21 +33,35 @@ export const Header = () => {
     setScreenWidth(window.innerWidth);
   };
 
+  const history = useHistory();
+
   return (
     <HeaderStyled>
+      {activeModal && <CreateAdModal setActiveModal={setActiveModal} />}
       <nav className="header-menu">
         <section className="header-toggle">
           <img src={Logo} alt="Logo da Motors Shop" />
           {screenWidth > 900 ? (
-            <NavLinks>
+            <NavLinks token={token}>
               <nav>
-                <a href="#cars">Carros</a>
+                <a href="#cars" onClick={() => setActiveModal(true)}>
+                  Carros
+                </a>
                 <a href="#cars">Motos</a>
                 <a href="#cars">Leilão</a>
               </nav>
+
               <DivLoginButton>
-                <LightButton>Login</LightButton>
-                <OutlineLightButton>Cadastrar</OutlineLightButton>
+                {token ? (
+                  <Avatar token={token}></Avatar>
+                ) : (
+                  <>
+                    <LightButton onClick={() => history.push("/login")}>
+                      Login
+                    </LightButton>
+                    <OutlineLightButton>Cadastrar</OutlineLightButton>
+                  </>
+                )}
               </DivLoginButton>
             </NavLinks>
           ) : menuIsVisible ? (

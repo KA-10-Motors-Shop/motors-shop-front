@@ -24,10 +24,15 @@ export const DefaultButtonStyled = styled.button`
   }
 `;
 
-export const BrandButtonStyled = styled(DefaultButtonStyled)`
+interface IBrandButton {
+  width?: string;
+}
+
+export const BrandButtonStyled = styled(DefaultButtonStyled)<IBrandButton>`
   background-color: var(--brand1);
   color: var(--whiteFixed);
   border: 1.5px solid var(--brand1);
+  width: ${({ width }) => width};
 
   :hover {
     background-color: var(--brand2);
@@ -46,6 +51,11 @@ export const BrandOpacityButtonStyled = styled(DefaultButtonStyled)`
   background-color: var(--brand4);
   color: var(--brand1);
   border: 1.5px solid var(--brand4);
+
+  :hover {
+    background-color: var(--grey10);
+    color: black;
+  }
 `;
 
 export const OutlineBrand1ButtonStyled = styled(DefaultButtonStyled)`
@@ -62,6 +72,7 @@ export const OutlineLightButtonStyled = styled(DefaultButtonStyled)`
   background-color: transparent;
   color: var(--grey0);
   border: 1.5px solid var(--grey4);
+  width: 100%;
 
   :hover {
     background-color: var(--brand4);
@@ -148,6 +159,7 @@ export const LightButtonStyled = styled(DefaultButtonStyled)`
   background-color: var(--grey10);
   color: var(--grey1);
   border: 1.5px solid var(--grey10);
+  width: 100%;
 
   :disabled {
     color: var(--grey1);
