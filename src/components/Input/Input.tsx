@@ -17,7 +17,7 @@ export const Input = ({
 			<div>
 				{label} {!!error && <span> - {error}</span>}
 			</div>
-			<input {...rest} />
+			<input placeholder={placeholder} {...rest} />
 		</Container>
 	);
 };
