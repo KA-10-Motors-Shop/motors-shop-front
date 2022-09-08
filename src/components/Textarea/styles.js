@@ -4,11 +4,11 @@ export const Container = styled.div`
 	text-align: left;
 	display: flex;
 	flex-direction: column;
-	width: 22rem;
-	height: 4.0625rem;
+	width: 19.6875rem;
+	height: 6.5625rem;
 
 	div {
-		margin-bottom: 0.5rem;
+		margin-bottom: 0.8rem;
 		height: 1.0625rem;
 		width: 2.3125rem;
 
@@ -27,13 +27,22 @@ export const Container = styled.div`
 		}
 	}
 
-	input {
-		height: 3rem;
+	label,
+	textarea {
+		letter-spacing: 1px;
+	}
+
+	textarea {
+		height: 5rem;
 		width: 19.6875rem;
+		resize: none;
 		border: 1.5px solid var(--grey7);
 		border-radius: 4px;
+		align-items: flex-start;
+		display: flex;
+		flex-direction: row;
 
-		input::placeholder {
+		textarea::placeholder {
 			color: var(--grey3);
 		}
 
