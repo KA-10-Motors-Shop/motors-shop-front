@@ -9,6 +9,7 @@ import {
 } from "../../components/Button/Button";
 import { Header } from "../../components/Header/Header";
 import { Input } from "../../components/Input/Input";
+import { Textarea } from "../../components/Textarea/Textarea";
 import { UseTokenProvider } from "../../providers/token";
 import api from "../../services/api";
 import { Container, LoginBox, MainSection } from "./styles";
