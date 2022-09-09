@@ -1,14 +1,18 @@
 import { UseTokenProvider } from "../../providers/token";
-import { DivContainer } from "./style";
+import { AvatarBox, DivContainer } from "./style";
 import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router";
 
 interface IAvatar {
   token: string;
   onClick?: any;
+  size: string;
+  bigAvatar: boolean;
+  accountType?: boolean;
 }
 
-const Avatar = ({ token }: IAvatar) => {
+const Avatar = ({ token, size, bigAvatar, accountType }: IAvatar) => {
   const { name }: any = jwt_decode(token);
   const [formatedLetters, setFormatedLetters] = useState("");
   const [randomColor, setRandomColor] = useState("");
@@ -28,18 +32,26 @@ const Avatar = ({ token }: IAvatar) => {
     return letters;
   };
 
+  const history = useHistory();
+
   useEffect(() => {
     setFormatedLetters(formatesLetters());
-    setRandomColor(`var(--random${Math.floor(Math.random() * 13)})`);
+    setRandomColor(`var(--random${Math.ceil(Math.random() * 12)})`);
   }, []);
 
   return (
-    <>
-      <DivContainer color={randomColor}>
-        <p>{formatedLetters}</p>
+    <AvatarBox bigAvatar={bigAvatar}>
+      <DivContainer color={randomColor} size={size}>
+        <h1>{formatedLetters}</h1>
       </DivContainer>
-      <p>{name}</p>
-    </>
+      {bigAvatar ? (
+        <h2>
+          {name} {accountType && <span>Anunciante</span>}
+        </h2>
+      ) : (
+        <p onClick={() => history.push("/productViewAdmin")}>{name}</p>
+      )}
+    </AvatarBox>
   );
 };
 
