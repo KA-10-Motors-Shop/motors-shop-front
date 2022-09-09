@@ -52,7 +52,6 @@ export const Login = () => {
         <form onSubmit={handleSubmit(onSubmit)}>
           <LoginBox>
             <h1>Login</h1>
-            {/* <form> */}
             <Input
               type="email"
               label="Usuário"
@@ -70,10 +69,11 @@ export const Login = () => {
               }}
             />
             <a href="/">Esqueci minha senha</a>
-            <BrandButton type="submit">Entrar</BrandButton>
+            <BrandButton width="100%" type="submit">
+              Entrar
+            </BrandButton>
             <a href="/">Ainda não possui conta?</a>
             <OutlineLightButton>Cadastrar</OutlineLightButton>
-            {/* </form> */}
           </LoginBox>
         </form>
       </MainSection>

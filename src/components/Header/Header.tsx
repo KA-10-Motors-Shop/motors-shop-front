@@ -17,7 +17,7 @@ export const Header = () => {
   const [isLogged, setIsLogged] = useState(false);
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  const [activeModal, setActiveModal] = useState(false);
+
   const handleLogin = () => setIsLogged(!isLogged);
 
   const { token }: any = UseTokenProvider();
@@ -37,23 +37,24 @@ export const Header = () => {
 
   return (
     <HeaderStyled>
-      {activeModal && <CreateAdModal setActiveModal={setActiveModal} />}
       <nav className="header-menu">
         <section className="header-toggle">
-          <img src={Logo} alt="Logo da Motors Shop" />
+          <img
+            src={Logo}
+            alt="Logo da Motors Shop"
+            onClick={() => history.push("/")}
+          />
           {screenWidth > 900 ? (
             <NavLinks token={token}>
               <nav>
-                <a href="#cars" onClick={() => setActiveModal(true)}>
-                  Carros
-                </a>
+                <a href="#cars">Carros</a>
                 <a href="#cars">Motos</a>
                 <a href="#cars">Leilão</a>
               </nav>
 
               <DivLoginButton>
                 {token ? (
-                  <Avatar token={token}></Avatar>
+                  <Avatar token={token} size="32px" bigAvatar={false}></Avatar>
                 ) : (
                   <>
                     <LightButton onClick={() => history.push("/login")}>
