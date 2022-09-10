@@ -18,10 +18,12 @@ export const Product = () => {
 								<img src={img} />
 							</div>
 						</section>
-						<section className="main-data_product">
-							<h6>{title}</h6>
+						<section className="main-data-product">
+							<h6 className="main-data-product__title">
+								{title}
+							</h6>
 							<div>
-								<div className="div-data_product">
+								<div className="div-data-product">
 									<p>{year}</p>
 									<p>{km} KM</p>
 								</div>
