@@ -60,6 +60,8 @@ export const Container = styled.main`
 export const AuctionBox = styled.section`
   height: 37.52rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
 
   h5 {
     margin-top: 6rem;

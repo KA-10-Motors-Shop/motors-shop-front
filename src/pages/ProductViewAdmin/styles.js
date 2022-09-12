@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const MainSection = styled.section`
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw; */
+  height: 100%;
   background-color: var(--grey7);
   z-index: -1;
 
@@ -15,11 +15,11 @@ export const MainSection = styled.section`
 export const PurpleBox = styled.div`
   width: 100%;
   height: 357px;
-  position: fixed;
+  position: absolute;
   top: 0;
   background-color: var(--brand2);
   z-index: 0;
-  margin-top: 50px;
+  margin-top: 80px;
 `;
 
 export const ProfileBox = styled.div`
@@ -39,4 +39,11 @@ export const ProfileBox = styled.div`
     height: 50px;
     line-height: 1;
   }
+`;
+
+export const DivContainer = styled.div`
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
 `;

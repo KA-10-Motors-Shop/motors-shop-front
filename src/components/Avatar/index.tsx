@@ -21,7 +21,7 @@ const Avatar = ({ token, size, bigAvatar, accountType }: IAvatar) => {
 
   const formatesLetters = () => {
     let letters = "";
-    if (lettersName.length > 1 && lettersName.length <= 2) {
+    if (lettersName.length > 1 && lettersName[1]) {
       lettersName.forEach((element: any) => {
         letters += element[0];
       });
@@ -29,7 +29,7 @@ const Avatar = ({ token, size, bigAvatar, accountType }: IAvatar) => {
       letters = lettersName[0][0];
     }
 
-    return letters;
+    return letters.slice(0, 2);
   };
 
   const history = useHistory();
