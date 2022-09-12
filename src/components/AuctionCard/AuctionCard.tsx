@@ -2,6 +2,7 @@ import { Container } from "./styles";
 import { BrandButton } from "../Button/Button";
 import { FiClock } from "react-icons/fi";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import Avatar from "../Avatar";
 
 interface AuctionCardInterface {
   id: number;
@@ -11,7 +12,7 @@ interface AuctionCardInterface {
   vehicle_mileage: string;
   vehicle_year: string;
   vehicle_price: string;
-  username: string;
+  user: any;
 }
 
 export const AuctionCard = ({
@@ -22,7 +23,7 @@ export const AuctionCard = ({
   vehicle_mileage,
   vehicle_year,
   vehicle_price,
-  username,
+  user,
 }: AuctionCardInterface) => {
   return (
     <Container img={cover_image}>
@@ -35,8 +36,7 @@ export const AuctionCard = ({
           <h6>{title}</h6>
           <p>{description}</p>
           <section className="card-data__user">
-            <p>R</p>
-            <span>{username}</span>
+            <Avatar name={user.name} size="32px" bigAvatar={false} />
           </section>
           <section className="card-data__vehicle">
             <div>

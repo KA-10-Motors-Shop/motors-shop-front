@@ -5,6 +5,7 @@ import { databaseCar, databaseMoto } from "../../database";
 import { SaleCard } from "../../components/SaleCard/SaleCard";
 import { Footer } from "../../components/Footer/Footer";
 import CarouselAuction from "../../components/CarouselAuction";
+import CarouselSale from "../../components/CarouselSale";
 
 export const Home = () => {
   return (
@@ -26,28 +27,9 @@ export const Home = () => {
       </AuctionBox>
       <SaleBox>
         <h5>Carros</h5>
-        <ul>
-          {databaseCar.map(
-            (
-              { id, img, title, description, km, year, price, username },
-              index
-            ) => (
-              <SaleCard
-                key={index}
-                id={id}
-                img={img}
-                title={title}
-                description={description}
-                km={km}
-                year={year}
-                price={price}
-                username={username}
-              />
-            )
-          )}
-        </ul>
+        <CarouselSale type="0" />
       </SaleBox>
-      <SaleBox>
+      {/* <SaleBox>
         <h5>Motos</h5>
         <ul>
           {databaseMoto.map(
@@ -69,7 +51,7 @@ export const Home = () => {
             )
           )}
         </ul>
-      </SaleBox>
+      </SaleBox> */}
       <Footer />
     </>
   );
