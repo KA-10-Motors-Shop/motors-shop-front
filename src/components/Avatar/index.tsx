@@ -1,19 +1,16 @@
-import { UseTokenProvider } from "../../providers/token";
 import { AvatarBox, DivContainer } from "./style";
-import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
 interface IAvatar {
-  token: string;
+  name: string;
   onClick?: any;
   size: string;
   bigAvatar: boolean;
   accountType?: boolean;
 }
 
-const Avatar = ({ token, size, bigAvatar, accountType }: IAvatar) => {
-  const { name }: any = jwt_decode(token);
+const Avatar = ({ name, size, bigAvatar, accountType }: IAvatar) => {
   const [formatedLetters, setFormatedLetters] = useState("");
   const [randomColor, setRandomColor] = useState("");
 

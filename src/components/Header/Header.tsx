@@ -11,7 +11,7 @@ import { IoMdClose } from "react-icons/io";
 import { UseTokenProvider } from "../../providers/token";
 import Avatar from "../Avatar";
 import { useHistory } from "react-router";
-import CreateAdModal from "../CreateAdModal";
+import jwt_decode from "jwt-decode";
 
 export const Header = () => {
   const [isLogged, setIsLogged] = useState(false);
@@ -21,6 +21,7 @@ export const Header = () => {
   const handleLogin = () => setIsLogged(!isLogged);
 
   const { token }: any = UseTokenProvider();
+  const { name }: any = jwt_decode(token);
 
   const popUpMenu = [
     "Editar Perfil",
@@ -54,7 +55,7 @@ export const Header = () => {
 
               <DivLoginButton>
                 {token ? (
-                  <Avatar token={token} size="32px" bigAvatar={false}></Avatar>
+                  <Avatar name={name} size="32px" bigAvatar={false}></Avatar>
                 ) : (
                   <>
                     <LightButton onClick={() => history.push("/login")}>

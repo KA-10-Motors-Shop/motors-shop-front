@@ -13,7 +13,7 @@ interface ICarousel {
   id?: boolean | string;
 }
 
-const CarouselAuction = ({ id = false }: ICarousel) => {
+const CarouselAuction = ({ id }: ICarousel) => {
   const [auctions, setAuctions] = useState([]);
   const [reqRoute] = useState("/advert/auctions?take=5&skip=0&id");
 
@@ -57,7 +57,7 @@ const CarouselAuction = ({ id = false }: ICarousel) => {
                 vehicle_mileage,
                 vehicle_year,
                 vehicle_price,
-                username,
+                user,
               },
               index
             ) => (
@@ -70,7 +70,7 @@ const CarouselAuction = ({ id = false }: ICarousel) => {
                   vehicle_mileage={vehicle_mileage}
                   vehicle_year={vehicle_year}
                   vehicle_price={vehicle_price}
-                  username={username}
+                  user={user}
                 />
               </SwiperSlide>
             )

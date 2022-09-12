@@ -10,10 +10,13 @@ import { useHistory } from "react-router";
 import { toast } from "react-toastify";
 import CarouselAuction from "../../components/CarouselAuction";
 import { Footer } from "../../components/Footer/Footer";
+import CarouselSale from "../../components/CarouselSale";
 
 const ProductViewAdmin = () => {
   const [activeModal, setActiveModal] = useState(false);
   const { token }: any = UseTokenProvider();
+  const { name }: any = jwt_decode(token);
+
   const [description, setDescription] = useState("");
   const [accountType, setAccountType] = useState(false);
   const [id, setId] = useState(false);
@@ -44,7 +47,7 @@ const ProductViewAdmin = () => {
           <ProfileBox>
             {token && (
               <Avatar
-                token={token}
+                name={name}
                 size="104px"
                 bigAvatar={true}
                 accountType={accountType}
@@ -58,6 +61,7 @@ const ProductViewAdmin = () => {
           </ProfileBox>
 
           <CarouselAuction id={id} />
+          <CarouselSale type="0" />
         </DivContainer>
       </main>
       <Footer />

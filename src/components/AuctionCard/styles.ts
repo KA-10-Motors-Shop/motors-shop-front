@@ -79,19 +79,13 @@ export const Container = styled.div<IContainer>`
   section.card-data__user {
     display: flex;
     height: 2rem;
-    width: 9.3125rem;
+    width: 20rem;
+    display: flex;
     align-items: center;
     margin-bottom: 1.25rem;
 
     p {
-      border-radius: 9.375rem;
-      background-color: var(--brand1);
-      width: 2rem;
-      height: 2rem;
-      color: var(--whiteFixed);
-      text-align: center;
-      margin-bottom: 0;
-      margin-right: 0.5rem;
+      margin: 0;
     }
 
     span {
