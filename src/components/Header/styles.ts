@@ -14,7 +14,7 @@ export const HeaderStyled = styled.header`
     background-color: var(--whiteFixed);
     padding-left: 1rem;
     padding-right: 1rem;
-    z-index: 1;
+    z-index: 2;
 
     img {
       width: 9.56rem;

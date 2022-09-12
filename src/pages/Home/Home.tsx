@@ -21,7 +21,7 @@ export const Home = () => {
           </div>
         </section>
       </Container>
-      <AuctionBox>
+      {/* <AuctionBox>
         <h5>Leilão</h5>
         <ul>
           {databaseAuction.map(
@@ -43,7 +43,7 @@ export const Home = () => {
             )
           )}
         </ul>
-      </AuctionBox>
+      </AuctionBox> */}
       <SaleBox>
         <h5>Carros</h5>
         <ul>

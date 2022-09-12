@@ -1,13 +1,15 @@
 import Avatar from "../../components/Avatar";
 import { Header } from "../../components/Header/Header";
 import { UseTokenProvider } from "../../providers/token";
-import { MainSection, ProfileBox, PurpleBox } from "./styles";
+import { DivContainer, MainSection, ProfileBox, PurpleBox } from "./styles";
 import jwt_decode from "jwt-decode";
 import { OutlineBrand1Button } from "../../components/Button/Button";
 import { useEffect, useState } from "react";
 import CreateAdModal from "../../components/CreateAdModal";
 import { useHistory } from "react-router";
 import { toast } from "react-toastify";
+import CarouselAuction from "../../components/CarouselAuction";
+import { Footer } from "../../components/Footer/Footer";
 
 const ProductViewAdmin = () => {
   const [activeModal, setActiveModal] = useState(false);
@@ -35,22 +37,27 @@ const ProductViewAdmin = () => {
         {activeModal && <CreateAdModal setActiveModal={setActiveModal} />}
 
         <PurpleBox />
-        <ProfileBox>
-          {token && (
-            <Avatar
-              token={token}
-              size="104px"
-              bigAvatar={true}
-              accountType={accountType}
-            />
-          )}
-          <p>{description}</p>
+        <DivContainer>
+          <ProfileBox>
+            {token && (
+              <Avatar
+                token={token}
+                size="104px"
+                bigAvatar={true}
+                accountType={accountType}
+              />
+            )}
+            <p>{description}</p>
 
-          <OutlineBrand1Button onClick={() => setActiveModal(true)}>
-            Criar Anuncio
-          </OutlineBrand1Button>
-        </ProfileBox>
+            <OutlineBrand1Button onClick={() => setActiveModal(true)}>
+              Criar Anuncio
+            </OutlineBrand1Button>
+          </ProfileBox>
+
+          <CarouselAuction />
+        </DivContainer>
       </main>
+      {/* <Footer /> */}
     </MainSection>
   );
 };
