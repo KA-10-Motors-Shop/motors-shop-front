@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { UseTokenProvider } from "../../providers/token";
 import api from "../../services/api";
 import { AuctionCard } from "../AuctionCard/AuctionCard";
 import { AuctionBox, DivContainer } from "./style";
@@ -10,21 +9,30 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 
-const CarouselAuction = () => {
+interface ICarousel {
+  id?: boolean | string;
+}
+
+const CarouselAuction = ({ id = false }: ICarousel) => {
   const [auctions, setAuctions] = useState([]);
-  const { token }: any = UseTokenProvider();
+  const [reqRoute] = useState("/advert/auctions?take=5&skip=0&id");
 
   useEffect(() => {
-    api
-      .get("/advert", { headers: { Authorization: `Bearer ${token}` } })
-      .then((response) => {
-        console.log(response.data);
-        setAuctions(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+    if (id) {
+      const routeLink = id === "all" ? reqRoute : `${reqRoute}=${id}`;
+
+      api
+        .get(routeLink)
+        .then((response) => {
+          console.log(response.data);
+          setAuctions(response.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   return (
     <DivContainer>
@@ -53,9 +61,8 @@ const CarouselAuction = () => {
               },
               index
             ) => (
-              <SwiperSlide>
+              <SwiperSlide key={index}>
                 <AuctionCard
-                  key={index}
                   id={id}
                   cover_image={cover_image}
                   title={title}

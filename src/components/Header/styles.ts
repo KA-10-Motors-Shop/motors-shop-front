@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { UseTokenProvider } from "../../providers/token";
 
 export const HeaderStyled = styled.header`
   section.header-toggle {

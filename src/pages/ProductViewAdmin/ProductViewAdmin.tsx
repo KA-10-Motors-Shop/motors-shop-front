@@ -16,6 +16,7 @@ const ProductViewAdmin = () => {
   const { token }: any = UseTokenProvider();
   const [description, setDescription] = useState("");
   const [accountType, setAccountType] = useState(false);
+  const [id, setId] = useState(false);
 
   const history = useHistory();
 
@@ -24,10 +25,12 @@ const ProductViewAdmin = () => {
       history.push("/login");
       toast.error("Necessário estar logado!");
     } else {
-      const { description, accountType }: any = jwt_decode(token);
+      const { description, accountType, id }: any = jwt_decode(token);
       setDescription(description);
       setAccountType(accountType);
+      setId(id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -54,10 +57,10 @@ const ProductViewAdmin = () => {
             </OutlineBrand1Button>
           </ProfileBox>
 
-          <CarouselAuction />
+          <CarouselAuction id={id} />
         </DivContainer>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </MainSection>
   );
 };

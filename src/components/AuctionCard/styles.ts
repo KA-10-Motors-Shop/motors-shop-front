@@ -147,7 +147,7 @@ export const Container = styled.div<IContainer>`
 
   @media (min-width: 750px) {
     height: 24.25rem;
-    width: 45.94rem;
+    width: 100%;
 
     section.card-data__timer {
       margin-top: 1.5rem;
