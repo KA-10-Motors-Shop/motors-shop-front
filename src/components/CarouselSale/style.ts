@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 export const DivContainer = styled.div`
   height: 32.8125rem;
-  width: 100%;
+  width: 95%;
+  margin: 0 auto;
 
   h5 {
     margin-top: 4.1875rem;
@@ -23,5 +24,9 @@ export const DivContainer = styled.div`
     li:first-child {
       margin-left: 1.4375rem;
     }
+  }
+
+  div.swiper {
+    height: 400px;
   }
 `;

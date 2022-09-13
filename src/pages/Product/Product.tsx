@@ -1,11 +1,31 @@
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import { BrandButton, DefaultButton } from "../../components/Button/Button";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
 import { databaseCar } from "../../database";
+import api from "../../services/api";
 import { Container } from "./styles";
 
 export const Product = () => {
+  const [productInfos, setProductInfos] = useState({});
   const { img, title, description, km, year, price, username } = databaseCar[0];
+
+  const { id }: any = useParams();
+
+  useEffect(() => {
+    api
+      .get(`/advert/${id}`)
+      .then((response) => {
+        console.log(response.data);
+
+        setProductInfos(response.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
       <Header />

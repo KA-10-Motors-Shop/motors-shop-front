@@ -5,12 +5,17 @@ import { SaleCard } from "../SaleCard/SaleCard";
 import { DivContainer } from "./style";
 import "swiper/css";
 import "swiper/css/pagination";
-
 import { Pagination } from "swiper";
+import NotFoundItems from "../NotFoundItems";
 
-const CarouselSale = ({ type }: any) => {
+interface ICarouselSale {
+  type: string;
+}
+
+const CarouselSale = ({ type }: ICarouselSale) => {
   const [sales, setSales] = useState([]);
   const [reqRoute] = useState("/advert/sales?take=5&skip=0&type");
+  const [componentName] = useState(type === "0" ? "Carros" : "Motos");
 
   useEffect(() => {
     if (type) {
@@ -31,46 +36,51 @@ const CarouselSale = ({ type }: any) => {
 
   return (
     <DivContainer>
-      <h5>Carros</h5>
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        {sales.map(
-          (
-            {
-              id,
-              cover_image,
-              title,
-              description,
-              vehicle_mileage,
-              vehicle_year,
-              vehicle_price,
-              user,
-            },
-            index
-          ) => (
-            <SwiperSlide key={index}>
-              <SaleCard
-                key={index}
-                id={id}
-                cover_image={cover_image}
-                title={title}
-                description={description}
-                vehicle_mileage={vehicle_mileage}
-                vehicle_year={vehicle_year}
-                vehicle_price={vehicle_price}
-                user={user}
-              />
-            </SwiperSlide>
-          )
-        )}
-      </Swiper>
+      <h5>{componentName}</h5>
+      {sales.length > 0 ? (
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={30}
+          pagination={{
+            clickable: true,
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {sales.length > 0 &&
+            sales.map(
+              (
+                {
+                  id,
+                  cover_image,
+                  title,
+                  description,
+                  vehicle_mileage,
+                  vehicle_year,
+                  vehicle_price,
+                  user,
+                },
+                index
+              ) => (
+                <SwiperSlide key={index}>
+                  <SaleCard
+                    key={index}
+                    id={id}
+                    cover_image={cover_image}
+                    title={title}
+                    description={description}
+                    vehicle_mileage={vehicle_mileage}
+                    vehicle_year={vehicle_year}
+                    vehicle_price={vehicle_price}
+                    user={user}
+                  />
+                </SwiperSlide>
+              )
+            )}
+        </Swiper>
+      ) : (
+        <NotFoundItems />
+      )}
     </DivContainer>
   );
 };

@@ -8,11 +8,11 @@ interface IAvatar {
   size: string;
   bigAvatar: boolean;
   accountType?: boolean;
+  color: string;
 }
 
-const Avatar = ({ name, size, bigAvatar, accountType }: IAvatar) => {
+const Avatar = ({ name, size, bigAvatar, accountType, color }: IAvatar) => {
   const [formatedLetters, setFormatedLetters] = useState("");
-  const [randomColor, setRandomColor] = useState("");
 
   const lettersName = name.split(" ");
 
@@ -33,12 +33,11 @@ const Avatar = ({ name, size, bigAvatar, accountType }: IAvatar) => {
 
   useEffect(() => {
     setFormatedLetters(formatesLetters());
-    setRandomColor(`var(--random${Math.ceil(Math.random() * 12)})`);
-  }, []);
+  }, [name]);
 
   return (
     <AvatarBox bigAvatar={bigAvatar}>
-      <DivContainer color={randomColor} size={size}>
+      <DivContainer color={color} size={size}>
         <h1>{formatedLetters}</h1>
       </DivContainer>
       {bigAvatar ? (

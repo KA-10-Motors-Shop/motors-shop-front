@@ -8,7 +8,7 @@ export const DivContainer = styled.div<IDivContainer>`
   width: ${({ size }) => size};
   height: ${({ size }) => size};
   border-radius: 150px;
-  background-color: ${(props) => props.color};
+  background-color: ${(props) => "var(--" + props.color + ")"};
   justify-content: center;
   align-items: center;
   display: flex;

@@ -15,11 +15,12 @@ import CarouselSale from "../../components/CarouselSale";
 const ProductViewAdmin = () => {
   const [activeModal, setActiveModal] = useState(false);
   const { token }: any = UseTokenProvider();
-  const { name }: any = jwt_decode(token);
 
   const [description, setDescription] = useState("");
   const [accountType, setAccountType] = useState(false);
   const [id, setId] = useState(false);
+  const [userName, setUserName] = useState(".");
+  const [profileColor, setProfileColor] = useState("");
 
   const history = useHistory();
 
@@ -28,10 +29,13 @@ const ProductViewAdmin = () => {
       history.push("/login");
       toast.error("Necessário estar logado!");
     } else {
-      const { description, accountType, id }: any = jwt_decode(token);
+      const { color, name, description, accountType, id }: any =
+        jwt_decode(token);
       setDescription(description);
       setAccountType(accountType);
       setId(id);
+      setUserName(name);
+      setProfileColor(color);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -47,7 +51,8 @@ const ProductViewAdmin = () => {
           <ProfileBox>
             {token && (
               <Avatar
-                name={name}
+                color={profileColor}
+                name={userName}
                 size="104px"
                 bigAvatar={true}
                 accountType={accountType}

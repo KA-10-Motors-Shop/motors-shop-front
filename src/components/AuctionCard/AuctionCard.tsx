@@ -36,7 +36,12 @@ export const AuctionCard = ({
           <h6>{title}</h6>
           <p>{description}</p>
           <section className="card-data__user">
-            <Avatar name={user.name} size="32px" bigAvatar={false} />
+            <Avatar
+              color={user.profile_color}
+              name={user.name}
+              size="32px"
+              bigAvatar={false}
+            />
           </section>
           <section className="card-data__vehicle">
             <div>

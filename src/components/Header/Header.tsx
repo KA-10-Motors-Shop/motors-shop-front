@@ -17,11 +17,18 @@ export const Header = () => {
   const [isLogged, setIsLogged] = useState(false);
   const [menuIsVisible, setMenuIsVisible] = useState(false);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-
-  const handleLogin = () => setIsLogged(!isLogged);
+  const [userName, setUserName] = useState(".");
+  const [profileColor, setProfileColor] = useState("");
 
   const { token }: any = UseTokenProvider();
-  const { name }: any = jwt_decode(token);
+
+  useEffect(() => {
+    if (token) {
+      const { name, color }: any = jwt_decode(token);
+      setUserName(name);
+      setProfileColor(color);
+    }
+  }, [token]);
 
   const popUpMenu = [
     "Editar Perfil",
@@ -55,7 +62,12 @@ export const Header = () => {
 
               <DivLoginButton>
                 {token ? (
-                  <Avatar name={name} size="32px" bigAvatar={false}></Avatar>
+                  <Avatar
+                    color={profileColor}
+                    name={userName}
+                    size="32px"
+                    bigAvatar={false}
+                  />
                 ) : (
                   <>
                     <LightButton onClick={() => history.push("/login")}>

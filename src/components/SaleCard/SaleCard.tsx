@@ -24,6 +24,7 @@ export const SaleCard = ({
   user,
 }: SaleCardInterface) => {
   const history = useHistory();
+  console.log(user);
 
   return (
     <Container onClick={() => history.push(`/productViewUser/${id}`)}>
@@ -34,7 +35,12 @@ export const SaleCard = ({
         <h6>{title}</h6>
         <p>{description}</p>
         <section className="card-data__user">
-          <Avatar name={user.name} size="32px" bigAvatar={false} />
+          <Avatar
+            color={user.profile_color}
+            name={user.name}
+            size="32px"
+            bigAvatar={false}
+          />
         </section>
         <section className="card-data__vehicle">
           <p>{vehicle_mileage} KM</p>
