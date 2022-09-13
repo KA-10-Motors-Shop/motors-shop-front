@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import api from "../../services/api";
-import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import {
   BrandButton,
@@ -31,17 +30,6 @@ const CreateAdModal = ({ setActiveModal }: IModal) => {
       setActiveModal(false);
     }
   }, []);
-
-  const schema = yup.object().shape({
-    ad_type: yup.number().required("Campo obrigatório!"),
-    title: yup.string().required("Campo obrigatório!"),
-    vehicle_year: yup.string().required("Campo obrigatório!"),
-    vehicle_mileage: yup.number().required("Campo obrigatório!"),
-    vehicle_price: yup.number().required("Campo obrigatório!"),
-    description: yup.string().required("Campo obrigatório!"),
-    vehicle_type: yup.number().required("Campo obrigatório!"),
-    cover_image: yup.string().required("Campo obrigatório!"),
-  });
 
   const {
     handleSubmit,

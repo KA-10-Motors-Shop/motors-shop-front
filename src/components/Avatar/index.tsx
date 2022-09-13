@@ -1,27 +1,24 @@
-import { UseTokenProvider } from "../../providers/token";
 import { AvatarBox, DivContainer } from "./style";
-import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 
 interface IAvatar {
-  token: string;
+  name: string;
   onClick?: any;
   size: string;
   bigAvatar: boolean;
   accountType?: boolean;
+  color: string;
 }
 
-const Avatar = ({ token, size, bigAvatar, accountType }: IAvatar) => {
-  const { name }: any = jwt_decode(token);
+const Avatar = ({ name, size, bigAvatar, accountType, color }: IAvatar) => {
   const [formatedLetters, setFormatedLetters] = useState("");
-  const [randomColor, setRandomColor] = useState("");
 
   const lettersName = name.split(" ");
 
   const formatesLetters = () => {
     let letters = "";
-    if (lettersName.length > 1 && lettersName.length <= 2) {
+    if (lettersName.length > 1 && lettersName[1]) {
       lettersName.forEach((element: any) => {
         letters += element[0];
       });
@@ -29,19 +26,18 @@ const Avatar = ({ token, size, bigAvatar, accountType }: IAvatar) => {
       letters = lettersName[0][0];
     }
 
-    return letters;
+    return letters.slice(0, 2);
   };
 
   const history = useHistory();
 
   useEffect(() => {
     setFormatedLetters(formatesLetters());
-    setRandomColor(`var(--random${Math.ceil(Math.random() * 12)})`);
-  }, []);
+  }, [name]);
 
   return (
     <AvatarBox bigAvatar={bigAvatar}>
-      <DivContainer color={randomColor} size={size}>
+      <DivContainer color={color} size={size}>
         <h1>{formatedLetters}</h1>
       </DivContainer>
       {bigAvatar ? (

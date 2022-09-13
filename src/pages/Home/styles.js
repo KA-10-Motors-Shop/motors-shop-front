@@ -58,27 +58,29 @@ export const Container = styled.main`
 `;
 
 export const AuctionBox = styled.section`
-	height: 37.52rem;
-	width: 100%;
+  height: 37.52rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 
-	h5 {
-		margin-top: 6rem;
-		margin-bottom: 5.92rem;
-		margin-left: 0.75rem;
-		font-size: 1.5rem;
-	}
+  h5 {
+    margin-top: 6rem;
+    margin-bottom: 5.92rem;
+    margin-left: 0.75rem;
+    font-size: 1.5rem;
+  }
 
-	ul {
-		display: flex;
-		overflow-x: auto;
-		scroll-behavior: smooth;
-		height: 500px;
-		width: 100%;
+  ul {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    height: 500px;
+    width: 100%;
 
-		li:first-child {
-			margin-left: 0.75rem;
-		}
-	}
+    li:first-child {
+      margin-left: 0.75rem;
+    }
+  }
 `;
 
 export const SaleBox = styled.section`

@@ -1,10 +1,9 @@
-import { AuctionCard } from "../../components/AuctionCard/AuctionCard";
 import { OutlineLightButton } from "../../components/Button/Button";
 import { Header } from "../../components/Header/Header";
 import { AuctionBox, Container, SaleBox } from "./styles";
-import { databaseAuction, databaseCar, databaseMoto } from "../../database";
-import { SaleCard } from "../../components/SaleCard/SaleCard";
 import { Footer } from "../../components/Footer/Footer";
+import CarouselAuction from "../../components/CarouselAuction";
+import CarouselSale from "../../components/CarouselSale";
 
 export const Home = () => {
   return (
@@ -22,73 +21,13 @@ export const Home = () => {
         </section>
       </Container>
       <AuctionBox>
-        <h5>Leilão</h5>
-        <ul>
-          {databaseAuction.map(
-            (
-              { id, img, title, description, km, year, price, username },
-              index
-            ) => (
-              <AuctionCard
-                key={index}
-                id={id}
-                img={img}
-                title={title}
-                description={description}
-                km={km}
-                year={year}
-                price={price}
-                username={username}
-              />
-            )
-          )}
-        </ul>
+        <CarouselAuction id={"all"} />
       </AuctionBox>
       <SaleBox>
-        <h5>Carros</h5>
-        <ul>
-          {databaseCar.map(
-            (
-              { id, img, title, description, km, year, price, username },
-              index
-            ) => (
-              <SaleCard
-                key={index}
-                id={id}
-                img={img}
-                title={title}
-                description={description}
-                km={km}
-                year={year}
-                price={price}
-                username={username}
-              />
-            )
-          )}
-        </ul>
+        <CarouselSale type="0" />
       </SaleBox>
       <SaleBox>
-        <h5>Motos</h5>
-        <ul>
-          {databaseMoto.map(
-            (
-              { id, img, title, description, km, year, price, username },
-              index
-            ) => (
-              <SaleCard
-                key={index}
-                id={id}
-                img={img}
-                title={title}
-                description={description}
-                km={km}
-                year={year}
-                price={price}
-                username={username}
-              />
-            )
-          )}
-        </ul>
+        <CarouselSale type="1" />
       </SaleBox>
       <Footer />
     </>

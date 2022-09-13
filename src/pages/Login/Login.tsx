@@ -41,7 +41,7 @@ export const Login = () => {
 
   useEffect(() => {
     if (token) {
-      history.push("/");
+      history.push("/productViewAdmin");
     }
   });
 
