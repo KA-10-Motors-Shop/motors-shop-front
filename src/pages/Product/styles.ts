@@ -46,7 +46,7 @@ export const Container = styled.main`
 		}
 	}
 
-	section.main-data_product {
+	section.main-data-product {
 		background-color: var(--grey10);
 		border-radius: 4px;
 		width: 90vw;
@@ -60,7 +60,7 @@ export const Container = styled.main`
 		padding-left: 1.75em;
 		margin-bottom: 1.5rem;
 
-		h6 {
+		h6.main-data-product__title {
 			margin-top: 2.75em;
 			margin-bottom: 4em;
 		}
@@ -68,7 +68,7 @@ export const Container = styled.main`
 		div {
 			margin-bottom: 2em;
 
-			div.div-data_product {
+			div.div-data-product {
 				display: flex;
 				width: 7.1em;
 
@@ -141,7 +141,7 @@ export const Container = styled.main`
 		}
 	}
 
-	aside {
+	aside.aside {
 		width: 90vw;
 		margin-bottom: 1.125rem;
 
@@ -451,9 +451,85 @@ export const Container = styled.main`
 
 	@media (min-width: 750px) {
 		section.main-product {
-			/*width: 100%;*/
-			display: grid;
-			grid-template-columns: 2fr 1fr;
+			align-items: flex-start;
+			flex-direction: row;
+			justify-content: center;
+			/*align-items: flex-start;*/
+			background: rgb(81, 38, 234);
+			background: linear-gradient(
+				180deg,
+				rgba(81, 38, 234, 1) 67%,
+				rgba(233, 236, 239, 1) 67%
+			);
+		}
+
+		section.main-product-presentation {
+			width: 45%;
+			margin-right: 3.5rem;
+		}
+
+		section.main-coverPage {
+			align-items: flex-start;
+
+			div.main-coverPage__img {
+				width: 45vw;
+
+				img {
+					width: 44vw;
+				}
+			}
+		}
+
+		section.main-data-product {
+			width: 45vw;
+			margin-left: 0.3em;
+			margin-bottom: 1.5rem;
+
+			h6.main-data-product__title {
+				white-space: nowrap;
+			}
+
+			div {
+				display: flex;
+				align-items: flex-start;
+				justify-content: space-around;
+
+				h6 {
+					display: flex;
+					margin-left: 15rem;
+				}
+			}
+		}
+
+		section.main-product__description {
+			width: 45vw;
+		}
+
+		aside.aside {
+			width: 25%;
+			margin-top: 5.3rem;
+
+			section.aside-pictures-product {
+				margin-bottom: 2em;
+				margin-top: 3rem;
+			}
+		}
+
+		section.main-comments {
+			align-items: flex-start;
+			padding-left: 10.6rem;
+
+			section.section-comments {
+				width: 45vw;
+			}
+		}
+
+		section.main-newComment {
+			margin-bottom: 4.56rem;
+
+			section.section-newComment {
+				width: 45vw;
+			}
 		}
 	}
 `;

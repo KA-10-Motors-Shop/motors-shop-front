@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import Logo from "../../assets/Logo.svg";
 import {
-  LightButton,
-  Outline2Button,
-  OutlineLightButton,
+	LightButton,
+	Outline2Button,
+	OutlineLightButton,
 } from "../Button/Button";
 import { NavLinks, HeaderStyled, DivLoginButton } from "./styles";
 import { HiOutlineMenu } from "react-icons/hi";
@@ -20,7 +20,7 @@ export const Header = () => {
   const [userName, setUserName] = useState(".");
   const [profileColor, setProfileColor] = useState("");
 
-  const { token }: any = UseTokenProvider();
+	const { token }: any = UseTokenProvider();
 
   useEffect(() => {
     if (token) {
@@ -37,28 +37,28 @@ export const Header = () => {
     "Sair",
   ];
 
-  window.onresize = window.onload = () => {
-    setScreenWidth(window.innerWidth);
-  };
+	window.onresize = window.onload = () => {
+		setScreenWidth(window.innerWidth);
+	};
 
-  const history = useHistory();
+	const history = useHistory();
 
-  return (
-    <HeaderStyled>
-      <nav className="header-menu">
-        <section className="header-toggle">
-          <img
-            src={Logo}
-            alt="Logo da Motors Shop"
-            onClick={() => history.push("/")}
-          />
-          {screenWidth > 900 ? (
-            <NavLinks token={token}>
-              <nav>
-                <a href="#cars">Carros</a>
-                <a href="#cars">Motos</a>
-                <a href="#cars">Leilão</a>
-              </nav>
+	return (
+		<HeaderStyled>
+			<nav className="header-menu">
+				<section className="header-toggle">
+					<img
+						src={Logo}
+						alt="Logo da Motors Shop"
+						onClick={() => history.push("/")}
+					/>
+					{screenWidth > 900 ? (
+						<NavLinks token={token}>
+							<nav>
+								<a href="#cars">Carros</a>
+								<a href="#cars">Motos</a>
+								<a href="#cars">Leilão</a>
+							</nav>
 
               <DivLoginButton>
                 {token ? (

@@ -90,32 +90,32 @@ export const HeaderStyled = styled.header`
 `;
 
 interface INav {
-  token?: string;
+	token?: string;
 }
 
 export const NavLinks = styled.nav<INav>`
-  width: ${({ token }) => (token ? "500px" : "600px")};
-  display: flex;
-  align-items: center;
+	width: ${({ token }) => (token ? "500px" : "600px")};
+	display: flex;
+	align-items: center;
 
-  a {
-    margin: 20px;
-    color: var(--grey2);
-    transition: color 0.2s;
+	a {
+		margin: 20px;
+		color: var(--grey2);
+		transition: color 0.2s;
 
-    :hover {
-      color: var(--grey3);
-    }
-  }
+		:hover {
+			color: var(--grey3);
+		}
+	}
 `;
 
 export const DivLoginButton = styled.div`
-  border-left: 2px solid var(--grey6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding-left: 10px;
-  height: 80px;
-  width: 100%;
+	border-left: 2px solid var(--grey6);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	padding-left: 10px;
+	height: 80px;
+	width: 100%;
 `;
