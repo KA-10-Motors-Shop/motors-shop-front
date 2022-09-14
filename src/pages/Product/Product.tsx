@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
+import Avatar from "../../components/Avatar";
 import { BrandButton, DefaultButton } from "../../components/Button/Button";
 import { Footer } from "../../components/Footer/Footer";
 import { Header } from "../../components/Header/Header";
@@ -9,11 +10,20 @@ import { Container } from "./styles";
 
 export const Product = () => {
   const [productInfos, setProductInfos] = useState({});
-  const { img, title, description, km, year, price, username } = databaseCar[0];
+  const {
+    cover_image,
+    title,
+    description,
+    vehicle_mileage,
+    vehicle_year,
+    vehicle_price,
+    user,
+  }: any = productInfos;
 
   const { id }: any = useParams();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     api
       .get(`/advert/${id}`)
       .then((response) => {
@@ -34,17 +44,17 @@ export const Product = () => {
           <section className="main-product-presentation">
             <section className="main-coverPage">
               <div className="main-coverPage__img">
-                <img src={img} />
+                <img src={cover_image} alt="A imagem do produto anunciado" />
               </div>
             </section>
             <section className="main-data_product">
-              <h6>{title}</h6>
+              <h6 className="main-data-product__title ">{title}</h6>
               <div>
                 <div className="div-data_product">
-                  <p>{year}</p>
-                  <p>{km} KM</p>
+                  <p>{vehicle_year}</p>
+                  <p>{vehicle_mileage} KM</p>
                 </div>
-                <h6>R$ {price}</h6>
+                <h6>R$ {vehicle_price}</h6>
               </div>
               <BrandButton>Comprar</BrandButton>
             </section>
@@ -58,32 +68,40 @@ export const Product = () => {
               <h6>Fotos</h6>
               <ul>
                 <li>
-                  <img src={img} />
+                  <img src={cover_image} />
                 </li>
                 <li>
-                  <img src={img} />
+                  <img src={cover_image} />
                 </li>
                 <li>
-                  <img src={img} />
+                  <img src={cover_image} />
                 </li>
                 <li>
-                  <img src={img} />
+                  <img src={cover_image} />
                 </li>
                 <li>
-                  <img src={img} />
+                  <img src={cover_image} />
                 </li>
                 <li>
-                  <img src={img} />
+                  <img src={cover_image} />
                 </li>
               </ul>
             </section>
             <section className="aside-user">
               <div>
-                <p className="aside-user__initials">SL</p>
-                <h6>{username}</h6>
-                <p>{description}</p>
+                {user && (
+                  <>
+                    <Avatar
+                      color={user.profile_color}
+                      name={user.name}
+                      size="64px"
+                      bigAvatar={true}
+                    />
+                    <p>{user.description}</p>
+                  </>
+                )}
+                <DefaultButton>Ver todos anúncios</DefaultButton>
               </div>
-              <DefaultButton>Ver todos anúncios</DefaultButton>
             </section>
           </aside>
         </section>
