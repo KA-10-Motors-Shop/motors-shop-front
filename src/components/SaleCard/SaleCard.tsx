@@ -27,7 +27,7 @@ export const SaleCard = ({
   console.log(user);
 
   return (
-    <Container onClick={() => history.push(`/productViewUser/${id}`)}>
+    <Container onClick={() => history.push(`/product/${id}`)}>
       <div className="box">
         <div className="box-img">
           <img src={cover_image} alt="imagem da venda" />

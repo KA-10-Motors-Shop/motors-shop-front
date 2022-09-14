@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
 import NotFoundItems from "../NotFoundItems";
+import WaitingLoader from "../WaitingLoader";
 
 interface ICarouselSale {
   type: string;
@@ -16,6 +17,23 @@ const CarouselSale = ({ type }: ICarouselSale) => {
   const [sales, setSales] = useState([]);
   const [reqRoute] = useState("/advert/sales?take=5&skip=0&type");
   const [componentName] = useState(type === "0" ? "Carros" : "Motos");
+  const [status, setStatus] = useState(0);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  const [itemsPerView, setItensPerView] = useState(3);
+
+  window.onresize = window.onload = () => {
+    console.log(window.innerWidth);
+
+    if (window.innerWidth >= 1300) {
+      setItensPerView(4);
+    } else if (window.innerWidth >= 1000 && window.innerWidth < 1300) {
+      setItensPerView(3);
+    } else if (window.innerWidth > 750 && window.innerWidth < 1000) {
+      setItensPerView(2);
+    }
+
+    console.log(itemsPerView);
+  };
 
   useEffect(() => {
     if (type) {
@@ -26,6 +44,7 @@ const CarouselSale = ({ type }: ICarouselSale) => {
         .then((response) => {
           console.log(response.data);
           setSales(response.data);
+          setStatus(response.status);
         })
         .catch((err) => {
           console.log(err);
@@ -39,8 +58,8 @@ const CarouselSale = ({ type }: ICarouselSale) => {
       <h5>{componentName}</h5>
       {sales.length > 0 ? (
         <Swiper
-          slidesPerView={4}
-          spaceBetween={30}
+          slidesPerView={itemsPerView}
+          spaceBetween={3}
           pagination={{
             clickable: true,
           }}
@@ -79,7 +98,7 @@ const CarouselSale = ({ type }: ICarouselSale) => {
             )}
         </Swiper>
       ) : (
-        <NotFoundItems />
+        <WaitingLoader length={sales.length} status={status} />
       )}
     </DivContainer>
   );
