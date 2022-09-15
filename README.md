@@ -1,30 +1,82 @@
-# Motors Shop
+<h1 align="center">
+  Motors Shop
+</h1>
+<h3 align="center">Projeto de um E-commerce voltando para veículos com compra, venda e leilões.</h3>
+<br/>
+<p>
+O objetivo desse Frontend é criar uma UI responsiva, mobile first, para o CRUD do backend da aplicação.
+</p>  
 
-Frontend repository for Motors Shop, a fullstack ecommerce project.
+<br/>
 
-## Available Scripts
+## **Tecnologias e bibliotecas utilizadas no FrontEnd:**
+- React.js
+- Typescript
+- Axios
+- JWT
+- Hooks e yup
+- Toastify
+- Styled-components
+- Swiper
+- Jest
+  
+<br/>
 
-In the project directory, you can run:
+## **Tecnologias e bibliotecas utilizadas no Backend:**
+- Node.js
+- Express.js
+- Typescript
+- Prima
+- JWT
+- Swagger
+- Bcrypt.js
+- Cors
+- Dotenv
+- Body-parser
+- uuid
+- Nodemon
+  
+<br/>
 
-### `yarn start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+O url base da API é https://motors-shop-front-pi.vercel.app/.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<br/>
 
-### `yarn test`
+## **Funcionalidades encontradas na aplicação Frontend:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Página Home
+- No Header, atualmente, está funcional o botão de login, onde será redirecionado para a página de login e poderá acessar novas funcionalidades da aplicação.
+- No corpo da página, haverá uma primeira sessão com 3 botões (leilão, carros, motos) onde ao clicar, será rapidamente encaminhado para a sessão correspondente.
+- Abaixo dessa sessão, há o carrossel do leilão, unicamente visual.
+- E, após isso, os carrosséis de venda (carros e motos) onde ao clicar em qualquer produto, irá ser redirecionado para a página do mesmo.
 
-### `yarn build`
+<br/>
+  
+### Página Login
+- Nessa página, poderá fazer login usando email e senha. 
+- Há também o botão de cadastro e de esquecimento da senha, mas não estão funcionais.
+  
+<br/>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Página Product/:id
+-  Ma primeira sessão da página, haverá a imagem do produto com título, quilometragem e preço. Além de um botão de compra, que não está funcional. Bem com uma descrição do mesmo, construída pelo criador do anúncio.
+-  Também na página há comentários de usuários acerca do produto e uma sessão de criação de novos comentários. Não funcionais.
+-  Na lateral, pode-se encontrar uma sessão com outras fotos do produto e um botão para ver todos os anúncios, que retornará à página Home, mas não está atualmente funcional.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<br/>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Página ProfileViewAdmin
+-  Na primeira sessão da página haverá um bloco trazendo nome, o tipo de perfil do usuário e a descrição criada pelo mesmo. Também nesse bloco, encontra-se o botão de criar anúncio.
+-  Ao clicar no botão "Criar anúncio", abrirá um modal solicitando as informações necessárias para a criação de um anúncio, seja de leilão seja de venda. Nele também deverá descrever se o veículo corresponde a moto ou carro, bem como inserir urls de imagem. O máximo de imagens que podem ser adicionadas são 5.
+-  Na parte inferior desse bloco, ficarão os anúncios do usuário logado.
+
+<br/>
+
+<hr/>
+
+Para rodar a aplicação, é necessário:
+- yarn add (para baixar as estruturas necessárias da aplicação, contida no package.json)
+- yarn start (para rodar a aplicação)
+- yarn test (para rodar os testes)
+
